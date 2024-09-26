@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./hardware-configuration_changes.nix
+      ./hardware-configuration-changes.nix
       ./luks.nix
       ./audio.nix
       ./bluetooth.nix

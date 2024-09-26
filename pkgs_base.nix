@@ -7,14 +7,13 @@
 
     environment.systemPackages = with pkgs; [
         curl
-	wget
+	    wget
         firefox
-        gcc
         git
         kate
         gparted
         btrfs-assistant
-	vscode
+        btrfs-progs
 	
     ];
 
