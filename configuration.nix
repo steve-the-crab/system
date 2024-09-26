@@ -9,6 +9,7 @@
       ./audio.nix
       ./bluetooth.nix
       ./pkgs_base.nix
+      ./home.nix
     ];
 
     services.spice-vdagentd.enable = true;
