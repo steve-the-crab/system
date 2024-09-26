@@ -15,5 +15,5 @@ fi
 
 echo $luksuuid
 
-sed -i "s|/dev/disk/by-uuid/<root_partition>|/dev/disk/by-uuid/$luksuuid|g" /mnt/etc/nixos/luks.nix
+sudo sed -i "s|/dev/disk/by-uuid/<root_partition>|/dev/disk/by-uuid/$luksuuid|g" /mnt/etc/nixos/luks.nix
 
