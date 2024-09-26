@@ -5,6 +5,7 @@
   hardware = {
       bluetooth = {
         enable = true;
+        pulseaudioSupport = true; # PipeWire will take care of this
         settings = {
           General = {
             Enable = "Source,Sink,Media,Socket";
@@ -15,18 +16,9 @@
 
     services = {
       blueman.enable = true;
-      bluez.enable = true; # Add this to ensure bluez service is enabled
+      bluez.enable = true;
     };
 
 }
 
 
-
-services.bluez = {
-  enable = true;
-};
-
-hardware.bluetooth = {
-  enable = true;
-  pulseaudioSupport = true; # PipeWire will take care of this
-};
