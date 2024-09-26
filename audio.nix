@@ -22,5 +22,15 @@
       jack.enable = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    alsa-utils
+    alsa-plugins
+    pavucontrol
+    pipewire-jack
+  ];
+
+   hardware.pulseaudio.package = pkgs.pipewire;
+
   
 }
