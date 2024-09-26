@@ -15,7 +15,6 @@
 
     services = {
       blueman.enable = true;
-      bluez.enable = true;
     };
 
 }
