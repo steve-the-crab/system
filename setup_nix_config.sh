@@ -17,7 +17,7 @@ done
 
 
 
-nixos-generate-config --root /mnt
+sudo nixos-generate-config --root /mnt
 
 sudo cp *.nix /etc/nixos/
 
