@@ -1,19 +1,19 @@
 #! /bin/sh
 
-device=$1
+rootpart=$1
 
 sudo cp *.nix /etc/nixos/
 
 # Get the UUID of the root partition directly using blkid
-luksuuid=$(blkid -s UUID -o value $device)
+luksuuid1=$(blkid -s UUID -o value $rootpart)
 
 # Check if the UUID was successfully retrieved
-if [ -z "$luksuuid" ]; then
+if [ -z "$luksuuid1" ]; then
     echo "luksuuid is unset. Exiting..."
     exit 1
 fi
 
-echo $luksuuid
+echo $luksuuid1
 
 
 
@@ -28,7 +28,7 @@ do
 done
 if [ "$luksuuid" = "unset" ]; then
   echo "luksuuid is unset. Exiting..."
-  exit 1
+#   exit 1
 fi
 
 echo $luksuuid
