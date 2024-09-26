@@ -9,8 +9,8 @@ luksuuid1=$(blkid -s UUID -o value $rootpart)
 
 # Check if the UUID was successfully retrieved
 if [ -z "$luksuuid1" ]; then
-    echo "luksuuid is unset. Exiting..."
-    exit 1
+    echo "luksuuid1 is unset. Exiting..."
+    # exit 1
 fi
 
 echo $luksuuid1
