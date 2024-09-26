@@ -10,6 +10,7 @@
   hardware = {
     pulseaudio.enable = false;
   };
+
   
   services = {
     pipewire = { 
@@ -19,18 +20,25 @@
         support32Bit = true;
       };
       pulse.enable = true;
-      jack.enable = true;
+      jack = {
+        enable = true;
+        # bufferSize = 128; # Low latency, adjust if needed
+        # latency = "256/48000"; # Adjust based on your needs
+      };
+      wireplumber.enable = true; # Enable wireplumber
     };
   };
 
   environment.systemPackages = with pkgs; [
     alsa-utils
     alsa-plugins
+    alsa-firmware
     pavucontrol
     pipewire-jack
+    helvum
+    qpwgraph
   ];
 
    hardware.pulseaudio.package = pkgs.pipewire;
-
-  
+ 
 }
