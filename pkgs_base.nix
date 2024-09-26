@@ -19,6 +19,10 @@
     ];
 
 
+    # zsh
+    programs.zsh.enable = true;
+
+    
     users.users.a = {
       shell = pkgs.zsh;
     };
