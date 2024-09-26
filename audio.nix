@@ -34,7 +34,6 @@
     alsa-plugins
     alsa-firmware
     pavucontrol
-    pipewire-jack
     helvum
     qpwgraph
   ];
