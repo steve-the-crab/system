@@ -44,7 +44,7 @@
     services.xserver.xkb.layout = "gb";
 
     # Enable touchpad support (enabled default in most desktopManager).
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
     # Enable X11
     services.xserver.enable = true;
@@ -65,16 +65,13 @@
 
 
     environment.systemPackages = with pkgs; [
-        curl
-	wget
-        firefox
-        gcc
+        # curl
+        # firefox
+        # gcc
         git
-        kate
-        gparted
-        btrfs-assistant
-	vscode
-	
+        # kate
+        # gparted
+        # btrfs-assistant
     ];
     
 
