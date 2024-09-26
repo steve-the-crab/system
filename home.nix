@@ -12,14 +12,12 @@
     useUserPackages = true;
   };
 
-  # Optional: user configuration for Home Manager
-  users.users.a = {
-    isNormalUser = true;
-    home-manager.useUserPackages = true;
-    home-manager.config = {
-      # Example settings
-      programs.zsh.enable = true;
-      home.stateVersion = "24.05"; # Update this according to your version
-    };
-  };
-}
+
+users.users.a.isNormalUser = true;
+home-manager.users.a = { pkgs, ... }: {
+    home.packages = [ pkgs.zsh ];
+    programs.zsh.enable = true;
+    # The state version is required and should stay at the version you originally installed.
+    home.stateVersion = "24.05";
+};
+
