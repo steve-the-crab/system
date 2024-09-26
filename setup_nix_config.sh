@@ -1,7 +1,20 @@
 #! /bin/sh
 
 # params
-device=$1
+# Default values
+device="unset"
+nixos_path="unset"
+
+# Parse arguments
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        --device) device="$2"; shift ;;  # --name flag expects a value
+        --nixos_path) nixos_path="$2"; shift ;;    # --age flag expects a value
+        *) echo "Unknown parameter passed: $1"; exit 1 ;;
+    esac
+    shift
+done
+
 
 
 nixos-generate-config --root /mnt
