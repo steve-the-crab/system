@@ -64,7 +64,12 @@
       #   packages = with pkgs; [
       #     firefox
       #     tree
-      #   ];
+      #   ];  
+      home.username = "a";
+      home.homeDirectory = "/home/a";
+
+      programs.zsh.enable = true;
+      programs.git.enable = true;
     };
 
     # Enable Home Manager
@@ -72,6 +77,25 @@
         useGlobalPkgs = true;
         useUserPackages = true;
     };
+
+
+
+  home-manager.config = {
+    # Enable Zsh as the shell
+    programs.zsh.enable = true;
+
+    # Configure Git
+    programs.git = {
+      enable = true;
+      userName = "a";
+      userEmail = "your-email@example.com";
+    };
+
+    home.stateVersion = "24.05";
+  };
+
+
+
 
     # fonts = {
     #   enableDefaultFonts = true;
