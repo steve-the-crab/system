@@ -20,6 +20,7 @@ done
 sudo nixos-generate-config --root /mnt
 
 sudo cp *.nix /etc/nixos/
+sudo cp nixpkgs ~/
 
 # Get the UUID of the root partition directly using blkid
 luksuuid=$(blkid -s UUID -o value $device)

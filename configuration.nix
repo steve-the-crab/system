@@ -10,7 +10,10 @@
       ./bluetooth.nix
       ./pkgs_base.nix
       ./home.nix
+      <home-manager/nixos>
     ];
+
+
 
     services.spice-vdagentd.enable = true;
 
@@ -55,14 +58,26 @@
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.a = {
-        isNormalUser = true;
-        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-        # hashedPassword = "RUN `mkpasswd -m sha-512` TO GENERATE IT";
-    #   packages = with pkgs; [
-    #     firefox
-    #     tree
-    #   ];
+      isNormalUser = true;
+      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      # hashedPassword = "RUN `mkpasswd -m sha-512` TO GENERATE IT";
+      #   packages = with pkgs; [
+      #     firefox
+      #     tree
+      #   ];
     };
+
+    # Enable Home Manager
+    home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+    };
+
+    # fonts = {
+    #   enableDefaultFonts = true;
+    #   fontsDirs = [ "/etc/nixos/fonts" ];
+    # };
+
 
     system.stateVersion = "24.05";
 }
