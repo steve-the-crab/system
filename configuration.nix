@@ -9,8 +9,11 @@
       ./audio.nix
       ./bluetooth.nix
       ./pkgs_base.nix
-      ./home.nix
-      <home-manager/nixos>
+      ./user.nix
+      (builtins.fetchTarball {
+        url = "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
+        sha256 = "sha256-NlE3YPkEZZX5LOMPsAO1h+OFXKcFZ8IzCWxfIk5F2Is=";
+      })
     ];
 
 
@@ -56,43 +59,43 @@
     services.displayManager.sddm.enable = true; # SDDM is recommended for KDE Plasma
     services.xserver.desktopManager.plasma5.enable = true;
 
-    # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.a = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-      # hashedPassword = "RUN `mkpasswd -m sha-512` TO GENERATE IT";
-      #   packages = with pkgs; [
-      #     firefox
-      #     tree
-      #   ];  
-      home.username = "a";
-      home.homeDirectory = "/home/a";
+    # # Define a user account. Don't forget to set a password with ‘passwd’.
+    # users.users.a = {
+    #   isNormalUser = true;
+    #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    #   # hashedPassword = "RUN `mkpasswd -m sha-512` TO GENERATE IT";
+    #   #   packages = with pkgs; [
+    #   #     firefox
+    #   #     tree
+    #   #   ];  
+    #   home.username = "a";
+    #   home.homeDirectory = "/home/a";
 
-      programs.zsh.enable = true;
-      programs.git.enable = true;
-    };
+    #   programs.zsh.enable = true;
+    #   programs.git.enable = true;
+    # };
 
-    # Enable Home Manager
-    home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-    };
+    # # Enable Home Manager
+    # home-manager = {
+    #     useGlobalPkgs = true;
+    #     useUserPackages = true;
+    # };
 
 
 
-  home-manager.config = {
-    # Enable Zsh as the shell
-    programs.zsh.enable = true;
+  # home-manager.config = {
+  #   # Enable Zsh as the shell
+  #   programs.zsh.enable = true;
 
-    # Configure Git
-    programs.git = {
-      enable = true;
-      userName = "a";
-      userEmail = "your-email@example.com";
-    };
+  #   # Configure Git
+  #   programs.git = {
+  #     enable = true;
+  #     userName = "a";
+  #     userEmail = "your-email@example.com";
+  #   };
 
-    home.stateVersion = "24.05";
-  };
+  #   home.stateVersion = "24.05";
+  # };
 
 
 
