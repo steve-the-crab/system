@@ -9,6 +9,7 @@
       ./audio.nix
       ./bluetooth.nix
       ./pkgs_base.nix
+      ./pkgs_dev.nix
       ./user.nix
     ];
 
