@@ -12,10 +12,9 @@
       ./user.nix
       (builtins.fetchTarball {
         url = "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
-        sha256 = "sha256-NlE3YPkEZZX5LOMPsAO1h+OFXKcFZ8IzCWxfIk5F2Is=";
+        sha256 = "sha256-00wp0s9b5nm5rsbwpc1wzfrkyxxmqjwsc1kcibjdbfkh69arcpsn";
       })
     ];
-
 
 
     services.spice-vdagentd.enable = true;
