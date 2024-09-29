@@ -25,7 +25,7 @@
         mkcert
         mold
         nodejs_22
-        perf
+        perf-linux
         php
         php-sqlite
         pv
