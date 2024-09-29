@@ -34,7 +34,7 @@
         rye
         stripe-cli
         vice
-        visual-studio-code-bin
+        vscode-fhs
         wavemon
         wmctrl
         xdotool
