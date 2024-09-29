@@ -23,7 +23,7 @@
             autosuggestions.enable = true;
             zsh-autoenv.enable = true;
         }
-    };
+    }
 
 
     
