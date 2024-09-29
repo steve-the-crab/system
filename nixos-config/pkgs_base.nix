@@ -23,12 +23,8 @@
 
 
 
-      qemu-base
-      qemu-common
-      qemu-full
-      qemu-img
-      qemu-system-x86
-      qemu-system-x86-firmware
+      qemu_full
+      qemu-utils
 
 
     ];
