@@ -14,7 +14,7 @@
         arduino
         cc65
         clang
-        cuda
+        # cuda
         docker
         docker-compose
         filezilla
