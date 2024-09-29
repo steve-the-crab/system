@@ -29,7 +29,7 @@
         php
         php83Extensions.sqlite3
         pv
-        python
+        python3
         rsync
         rye
         stripe-cli
