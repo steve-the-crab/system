@@ -25,7 +25,7 @@
         mkcert
         mold
         nodejs_22
-        perf-linux
+        linuxKernel.packages.linux_zen.perf
         php
         php-sqlite
         pv
