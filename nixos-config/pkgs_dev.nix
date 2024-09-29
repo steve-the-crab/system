@@ -20,7 +20,6 @@
         filezilla
         git
         git-lfs
-        kate
         lazydocker
         lazygit
         mkcert
@@ -31,13 +30,8 @@
         php-sqlite
         pv
         python
-        qemu-base
-        qemu-common
-        qemu-full
-        qemu-img
-        qemu-system-x86
-        qemu-system-x86-firmware
         rsync
+        rye
         stripe-cli
         vice
         visual-studio-code-bin

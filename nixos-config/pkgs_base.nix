@@ -20,6 +20,17 @@
       zsh-powerlevel10k
       fasd        # if you use fasd
       mcfly       # if you use mcfly for ctrl-r history
+
+
+
+      qemu-base
+      qemu-common
+      qemu-full
+      qemu-img
+      qemu-system-x86
+      qemu-system-x86-firmware
+
+
     ];
 
 
