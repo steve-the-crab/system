@@ -1,7 +1,15 @@
 [Desktop Entry]
 Name=plasma-theme
-Comment=A custom theme based on Breeze
+Comment=My custom Look and Feel theme
+X-KDE-PluginInfo-Author=Your Name
+X-KDE-PluginInfo-Email=you@example.com
+X-KDE-PluginInfo-Version=1.0
 Type=Service
+
+[X-KDE-PluginInfo]
+Name=plasma-theme
+Version=1.0
+License=GPL
 
 [X-Plasma]
 DesktopTheme=breeze
