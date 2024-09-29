@@ -11,5 +11,6 @@ Name=plasma-theme
 Version=1.0
 License=GPL
 
-[X-Plasma]
-DesktopTheme=breeze
+[X-Plasma-LookAndFeel]
+Name=plasma-theme
+Description=My custom KDE Plasma Global Theme based on Breeze
