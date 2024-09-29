@@ -27,7 +27,7 @@
         nodejs_22
         linuxKernel.packages.linux_zen.perf
         php
-        php-sqlite
+        php83Extensions.sqlite3
         pv
         python
         rsync
