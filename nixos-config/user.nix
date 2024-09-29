@@ -22,6 +22,11 @@
             enable = true;
             autosuggestions.enable = true;
             zsh-autoenv.enable = true;
+            ohMyZsh = {
+                enable = true;
+                theme = "powerlevel10k/powerlevel10k";
+                plugins = [ "git" ]; # Add any plugins you use
+            };
         };
     };
 

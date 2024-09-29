@@ -15,7 +15,11 @@
       btrfs-assistant
       btrfs-progs
 	
+      
       zsh
+      powerlevel10k
+      fasd        # if you use fasd
+      mcfly       # if you use mcfly for ctrl-r history
     ];
 
 
