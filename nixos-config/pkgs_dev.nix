@@ -24,7 +24,7 @@
         lazygit
         mkcert
         mold
-        npm
+        nodejs_22
         perf
         php
         php-sqlite
