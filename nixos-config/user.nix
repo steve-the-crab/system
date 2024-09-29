@@ -15,20 +15,18 @@
 
     users.defaultUserShell=pkgs.zsh; 
 
-    programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-
-
     # enable zsh and oh my zsh
     programs = {
         zsh = {
             enable = true;
             autosuggestions.enable = true;
             zsh-autoenv.enable = true;
-            ohMyZsh = {
-                enable = true;
-                theme = "powerlevel10k/powerlevel10k";
-                plugins = [ "git" ]; # Add any plugins you use
-            };
+            promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+            # ohMyZsh = {
+            #     enable = true;
+            #     theme = "powerlevel10k/powerlevel10k";
+            #     plugins = [ "git" ]; # Add any plugins you use
+            # };
         };
     };
 
