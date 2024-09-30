@@ -1,8 +1,8 @@
 #! /bin/sh
 
-# params
-# Default values
+# the root device with the lvm, i.e. /dev/vda2
 device="unset"
+# when we're installing we use /mnt/etc/nixos otherwise /etc/nixos
 nixos_path="unset"
 
 # Parse arguments

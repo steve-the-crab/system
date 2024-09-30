@@ -31,40 +31,27 @@ lvcreate --name $logical_volume -l +100%FREE $volume_group
 mkfs.vfat -n EFI -F 32 $bootpart
 mkfs.btrfs -L NixOS /dev/mapper/$volume_group-$logical_volume
 
-### btrfs
 
+# export BTRFS_OPT=rw,noatime,discard=async,compress-force=zstd,space_cache=v2,commit=120
 export BTRFS_OPT=rw,noatime,discard=async,space_cache=v2,commit=120
 export BTRFS_COMPRESSED_OPT=rw,noatime,compress-force=zstd,discard=async,space_cache=v2,commit=120
 
-# Initial mount of the filesystem
 mount -o $BTRFS_OPT /dev/mapper/$volume_group-$logical_volume /mnt
 
-# Creating subvolumes
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 btrfs subvolume create /mnt/home/@archive
 btrfs subvolume create /mnt/@snapshots
 btrfs subvolume create /mnt/@nix
 
-# Unmounting the filesystem
 umount /mnt
 
-# Mounting the root subvolume
 mount -o $BTRFS_OPT,subvol=@ /dev/mapper/$volume_group-$logical_volume /mnt
-
-# Creating necessary directories
 mkdir /mnt/home
 mkdir /mnt/home/archive
 mkdir /mnt/nix
-mkdir /mnt/snapshots  # Create directory for snapshots
-
-# Mounting subvolumes
 mount -o $BTRFS_OPT,subvol=@home /dev/mapper/$volume_group-$logical_volume /mnt/home/
 mount -o $BTRFS_COMPRESSED_OPT,subvol=@home/@archive /dev/mapper/$volume_group-$logical_volume /mnt/home/archive/
 mount -o $BTRFS_OPT,subvol=@nix /dev/mapper/$volume_group-$logical_volume /mnt/nix/
-mount -o $BTRFS_OPT,subvol=@snapshots /dev/mapper/$volume_group-$logical_volume /mnt/snapshots/
-
-### boot
-
 mkdir -p /mnt/boot/
 mount -o rw,noatime $bootpart /mnt/boot/

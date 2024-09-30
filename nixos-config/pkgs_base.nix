@@ -14,6 +14,7 @@
       gparted
       btrfs-assistant
       btrfs-progs
+      snapper
 	
 
       zsh
