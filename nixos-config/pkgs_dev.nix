@@ -47,20 +47,33 @@
 
 
     # rustup
-  systemd.user.services.rustup-install = {
-    description = "Install Rust using rustup on first install";
-    wantedBy = [ "default.target" ];
-    serviceConfig = {
-      ExecStart = ''
-        if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
-          rustup install stable
-          rustup install nightly
-        fi
-      '';
-      Type = "oneshot";
-      RemainAfterExit = true;
-    };
-  };
+
+  system.activationScripts.rustup = ''
+    su - <username> -c 'if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
+      rustup install stable
+      rustup install nightly
+    fi'
+  '';
+
+
+
+
+
+
+  # systemd.user.services.rustup-install = {
+  #   description = "Install Rust using rustup on first install";
+  #   wantedBy = [ "default.target" ];
+  #   serviceConfig = {
+  #     ExecStart = ''
+  #       if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
+  #         rustup install stable
+  #         rustup install nightly
+  #       fi
+  #     '';
+  #     Type = "oneshot";
+  #     RemainAfterExit = true;
+  #   };
+  # };
 
 
 
