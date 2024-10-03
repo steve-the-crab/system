@@ -12,20 +12,23 @@
       git
       kate
       gparted
+
       btrfs-assistant
       btrfs-progs
       snapper
 	
-
       zsh
       zsh-powerlevel10k
       fasd        # if you use fasd
       mcfly       # if you use mcfly for ctrl-r history
 
 
-
+      docker
       qemu_full
       qemu-utils
+
+
+      
 
 
     ];

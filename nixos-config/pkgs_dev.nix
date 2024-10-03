@@ -7,9 +7,6 @@
 
     environment.systemPackages = with pkgs; [
         curl
-        wget
-        git
-        kate
         android-tools
         arduino
         cc65
@@ -18,8 +15,10 @@
         docker
         docker-compose
         filezilla
+        gcc
         git
         git-lfs
+        kate
         lazydocker
         lazygit
         mkcert
@@ -30,17 +29,38 @@
         php83Extensions.sqlite3
         pv
         python3
+        rustup
         rsync
         rye
         stripe-cli
         vice
         vscode-fhs
         wavemon
-        wmctrl
         xdotool
+        wget
+        wmctrl
 
 
     ];
+
+
+
+
+    # rustup
+  systemd.user.services.rustup-install = {
+    description = "Install Rust using rustup on first install";
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      ExecStart = ''
+        if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
+          rustup install stable
+          rustup install nightly
+        fi
+      '';
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+  };
 
 
 

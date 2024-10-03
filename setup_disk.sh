@@ -64,6 +64,10 @@ mount -o $BTRFS_COMPRESSED_OPT,subvol=@home/@archive /dev/mapper/$volume_group-$
 mount -o $BTRFS_OPT,subvol=@nix /dev/mapper/$volume_group-$logical_volume /mnt/nix/
 mount -o $BTRFS_OPT,subvol=@snapshots /dev/mapper/$volume_group-$logical_volume /mnt/snapshots/
 
+# snapshots
+btrfs subvolume snapshot /mnt/@home /mnt/@home-blank
+btrfs subvolume snapshot /mnt/@home/@archive /mnt/@archive-blank
+
 ### boot
 
 mkdir -p /mnt/boot/
