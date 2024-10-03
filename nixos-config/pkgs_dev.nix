@@ -53,9 +53,10 @@
 
 
 
+    # runuser -l <username> -c 'if [ ! -f "/home/<username>/.cargo/bin/rustc" ]; then
 
   system.activationScripts.rustup = ''
-    runuser -l <username> -c 'if [ ! -f "/home/<username>/.cargo/bin/rustc" ]; then
+    runuser -l a -c 'if [ ! -f "/home/a/.cargo/bin/rustc" ]; then
       rustup install stable
       rustup install nightly
     fi'
