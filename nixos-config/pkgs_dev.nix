@@ -49,12 +49,26 @@
     # rustup
 
 
-system.activationScripts.rustup = ''
-  sudo -u <username> bash -c 'if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
-    rustup install stable
-    rustup install nightly
-  fi'
-'';
+
+
+
+
+
+  system.activationScripts.rustup = ''
+    runuser -l <username> -c 'if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
+      rustup install stable
+      rustup install nightly
+    fi'
+  '';
+
+
+
+# system.activationScripts.rustup = ''
+#   sudo -u <username> bash -c 'if [ ! -f "$HOME/.cargo/bin/rustc" ]; then
+#     rustup install stable
+#     rustup install nightly
+#   fi'
+# '';
 
 
 
