@@ -29,7 +29,6 @@
         php83Extensions.sqlite3
         pv
         python3
-        rustup
         rsync
         rye
         stripe-cli
