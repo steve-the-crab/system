@@ -56,9 +56,9 @@
 
   system.activationScripts.rustup = ''
     runuser -l a -c 'if [ ! -f "/home/a/.cargo/bin/rustc" ]; then
-      ${pkgs.curl}/bin/curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-      rustup install stable
-      rustup install nightly
+        ${pkgs.curl}/bin/curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | ${pkgs.bash}/bin/bash -s -- -y
+        /home/a/.cargo/bin/rustup install stable
+        /home/a/.cargo/bin/rustup install nightly
     fi'
   '';
 
