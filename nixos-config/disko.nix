@@ -34,11 +34,11 @@ let
                 options = [ "rw" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "commit=120" ];
               };
               subvolumes = [
-                { name = "@"; mountPoint = "/"; };
-                { name = "@home"; mountPoint = "/home"; };
-                { name = "@snapshots"; mountPoint = "/snapshots"; };
-                { name = "@nix"; mountPoint = "/nix"; };
-                { name = "@archive"; mountPoint = "/home/archive"; };
+                { name = "@"; mountPoint = "/"; }
+                { name = "@home"; mountPoint = "/home"; }
+                { name = "@snapshots"; mountPoint = "/snapshots"; }
+                { name = "@nix"; mountPoint = "/nix"; }
+                { name = "@archive"; mountPoint = "/home/archive"; }
               ];
             }
           ];
