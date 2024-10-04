@@ -12,9 +12,9 @@
       { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
       };
 
-    fileSystems."/archive" =
-      { options = [ "rw" "noatime" "compress-force=zstd" "discard=async" "space_cache=v2" "commit=120" ];
-      };
+    # fileSystems."/archive" =
+    #   { options = [ "rw" "noatime" "compress-force=zstd" "discard=async" "space_cache=v2" "commit=120" ];
+    #   };
 
     fileSystems."/nix" =
       { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
