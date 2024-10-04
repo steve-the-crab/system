@@ -49,7 +49,7 @@
     # rustup
 
   system.activationScripts.rustup = ''
-    rustup default nightly
+    ${pkgs.rustup} default nightly
   '';
 
 
