@@ -48,9 +48,10 @@
 
     # rustup
 
-  system.activationScripts.rustup = ''
-    ${pkgs.rustup} default nightly
-  '';
+    # move to home manager?
+    system.activationScripts.rustup = ''
+      ${pkgs.rustup}/bin/rustup default nightly
+    '';
 
 
 
