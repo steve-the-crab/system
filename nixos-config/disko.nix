@@ -27,6 +27,7 @@
               content = {
                 type = "luks";
                 name = "cryptroot";
+                # label = "cryptroot";
                 extraOpenArgs = [
                   "--allow-discards"
                   "--perf-no_read_workqueue"
@@ -40,19 +41,19 @@
                   subvolumes = {
                     "/root" = {
                       mountpoint = "/";
-                      mountOptions = ["subvol=root" "compress=zstd" "noatime"];
+                      mountOptions = ["subvol=root" "noatime"];
                     };
                     "/home" = {
                       mountpoint = "/home";
-                      mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+                      mountOptions = ["subvol=home" "noatime"];
                     };
                     "/home/archive" = {
                       mountpoint = "/home/archive";
-                      mountOptions = ["subvol=home/archive" "compress=zstd" "noatime"];
+                      mountOptions = ["subvol=home/archive" "compress=zstd"];
                     };
                     "/nix" = {
                       mountpoint = "/nix";
-                      mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+                      mountOptions = ["subvol=nix" "noatime"];
                     };
                     # "/persist" = {
                     #   mountpoint = "/persist";

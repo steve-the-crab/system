@@ -6,12 +6,12 @@
     ];
 
     environment.systemPackages = with pkgs; [
-      nix-serve
+      # nix-serve
       disko
 
       curl
       # wget
-      firefox
+      # firefox
       git
       kate
       gparted

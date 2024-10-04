@@ -8,6 +8,7 @@
         # (import "${home-manager}/nixos")
     ];
 
+    # todo const
     users.users.a = {
         isNormalUser = true;
         extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
