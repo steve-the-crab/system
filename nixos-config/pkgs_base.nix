@@ -6,6 +6,8 @@
     ];
 
     environment.systemPackages = with pkgs; [
+      nix-serve
+
       curl
       wget
       firefox
