@@ -1,9 +1,7 @@
-{
-  config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
-let
-  # Disk configuration
-  diskConfig = {
+{
+  disko.devices = {
     disk = "/dev/vda";
     partitions = [
       {
@@ -46,16 +44,4 @@ let
       }
     ];
   };
-in
-{
-  imports = [ diskoModule ];
-
-  disko.configuration = {
-    configVersion = "1";
-    disks = {
-      vda = diskConfig;
-    };
-  };
-
-  # Additional NixOS configuration...
 }
