@@ -7,9 +7,10 @@
 
     environment.systemPackages = with pkgs; [
       nix-serve
+      disko
 
       curl
-      wget
+      # wget
       firefox
       git
       kate
@@ -25,9 +26,9 @@
       mcfly       # if you use mcfly for ctrl-r history
 
 
-      docker
-      qemu_full
-      qemu-utils
+      # docker
+      # qemu_full
+      # qemu-utils
 
 
       
