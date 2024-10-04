@@ -31,7 +31,7 @@ let
               format = {
                 fstype = "btrfs";
                 label = "NixOS";
-                options = [ "rw", "noatime", "compress=zstd", "discard=async", "space_cache=v2", "commit=120" ];
+                options = [ "rw" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "commit=120" ];
               };
               subvolumes = [
                 { name = "@"; mountPoint = "/"; };
