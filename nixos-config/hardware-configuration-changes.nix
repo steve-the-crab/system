@@ -7,7 +7,7 @@
   fileSystems."/" =
       { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
       };
-
+#
     fileSystems."/home" =
       { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
       };
