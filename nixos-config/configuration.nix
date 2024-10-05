@@ -10,7 +10,7 @@
       ./bluetooth.nix
       ./pkgs_base.nix
       # ./pkgs_dev.nix
-      ./user.nix
+      ./user.nix 
     ];
 
  
