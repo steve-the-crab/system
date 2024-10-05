@@ -6,8 +6,8 @@
       ./hardware-configuration.nix
       ./hardware-configuration-changes.nix
       ./luks.nix
-      # ./audio.nix
-      # ./bluetooth.nix
+      ./audio.nix
+      ./bluetooth.nix
       ./pkgs_base.nix
       # ./pkgs_dev.nix
       ./user.nix

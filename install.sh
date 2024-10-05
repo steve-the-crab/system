@@ -3,7 +3,10 @@
 # # Check if working directory matches the script's directory
 # source /home/a/scripts/utility_functions.sh
 # check_script_dir
-
+if [[ "$EUID" -ne 0 ]]; then
+  echo "This script must be run as root."
+  exit 1
+fi
 
 # echo 1
 
@@ -16,6 +19,9 @@ cd ~
 
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
+
+
+###
 
 nix-shell -p git
 # nix-env -iA nixpkgs.git
@@ -52,7 +58,7 @@ mount -o subvol=swap,noatime /dev/mapper/cryptroot /mnt/swap
 
 ###
 
-
+exit
 
 # gen and copy configs
 sudo nixos-generate-config --root /mnt
