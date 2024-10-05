@@ -27,7 +27,7 @@
               content = {
                 type = "luks";
                 name = "cryptroot";
-                # label = "cryptroot";
+                label = "cryptroot";
                 extraOpenArgs = [
                   "--allow-discards"
                   "--perf-no_read_workqueue"
@@ -55,14 +55,6 @@
                       mountpoint = "/nix";
                       mountOptions = ["subvol=nix" "noatime"];
                     };
-                    # "/persist" = {
-                    #   mountpoint = "/persist";
-                    #   mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
-                    # };
-                    # "/log" = {
-                    #   mountpoint = "/var/log";
-                    #   mountOptions = ["subvol=log" "compress=zstd" "noatime"];
-                    # };
                     "/swap" = {
                       mountpoint = "/swap";
                       swap.swapfile.size = "16G";
@@ -77,7 +69,8 @@
     };
   };
 
-#   fileSystems."/persist".neededForBoot = true;
+  fileSystems."/".neededForBoot = true;
+  # fileSystems."/archive".neededForBoot = true;
 }
 
 
