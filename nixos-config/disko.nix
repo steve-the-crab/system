@@ -27,7 +27,6 @@
               content = {
                 type = "luks";
                 name = "cryptroot";
-                label = "cryptroot";
                 extraOpenArgs = [
                   "--allow-discards"
                   "--perf-no_read_workqueue"
