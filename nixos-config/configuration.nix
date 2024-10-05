@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./hardware-configuration-changes.nix
+      # ./hardware-configuration-changes.nix
       ./luks.nix
       ./audio.nix
       ./bluetooth.nix
@@ -12,6 +12,26 @@
       # ./pkgs_dev.nix
       ./user.nix
     ];
+
+ 
+    fileSystems."/" =
+      { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
+      };
+
+    fileSystems."/home" =
+      { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
+      };
+
+    fileSystems."/archive" =
+      { options = [ "rw" "compress-force=zstd" "discard=async" "space_cache=v2" "commit=120" ];
+      };
+
+    fileSystems."/nix" =
+      { options = [ "rw" "noatime" "discard=async" "space_cache=v2" "commit=120" ];
+      };
+
+
+    ###
 
 
     services.spice-vdagentd.enable = true;

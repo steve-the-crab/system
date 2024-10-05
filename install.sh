@@ -3,50 +3,43 @@
 # # Check if working directory matches the script's directory
 # source /home/a/scripts/utility_functions.sh
 # check_script_dir
+
+# check if sudo
 if [[ "$EUID" -ne 0 ]]; then
   echo "This script must be run as root."
   exit 1
 fi
 
-# echo 1
 
-# exit
-
-###################################################
-# git
-
+# setup git repo
 cd ~
+# nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+# nix-channel --update
 
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-nix-channel --update
-
-
-###
-
-nix-shell -p git
+nix-shell -p git --run "git clone https://github.com/steve-the-crab/system 2>/dev/null"
 # nix-env -iA nixpkgs.git
-
-git clone https://github.com/steve-the-crab/system
 cd system
 
-###################################################
-# disk
+
+# setup disk
 
 # install and run disko
 # nix-env -iA nixpkgs.disko
-nix-shell -p disko
+nix-shell -p disko --run "disko nixos-config/disko.nix"
+
 # nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko nixos-config/disko.nix
+  
+
 
 # mount
 
-sudo -i
 
 # Mount the root subvolume
 mount -o subvol=root,noatime /dev/mapper/cryptroot /mnt
 
 # Mount the /boot partition
 mkdir -p /mnt/boot
-mount /dev/disk/by-label/boot /mnt/boot
+mount /dev/disk/by-partlabel/boot /mnt/boot
 
 # Mount other subvolumes
 mkdir -p /mnt/home /mnt/home/archive /mnt/nix /mnt/swap
@@ -58,12 +51,12 @@ mount -o subvol=swap,noatime /dev/mapper/cryptroot /mnt/swap
 
 ###
 
-exit
+# exit
 
 # gen and copy configs
-sudo nixos-generate-config --root /mnt
-sudo cp ./nixos-config/*.nix /etc/nixos/
-sudo cp -r ./nixos-config/nixpkgs ~/
+nixos-generate-config --root /mnt
+cp ./nixos-config/*.nix /etc/nixos/
+cp -r ./nixos-config/nixpkgs ~/
 
 
 ###

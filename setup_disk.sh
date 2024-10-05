@@ -4,7 +4,6 @@ set -e
 set -u
 set -x
 ## configure this!
-hostname="nixos"
 password="abc123"
 diskdev=/dev/vda
 bootpart=/dev/vda1
@@ -13,7 +12,7 @@ volume_group=vg
 logical_volume=root
 encrypted_physical_volume=enc-pv
 
-
+ 
 
 wipefs -a $diskdev
 
