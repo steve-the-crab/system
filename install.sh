@@ -1,14 +1,14 @@
 #! /bin/sh
 
-# # Check if working directory matches the script's directory
-# source /home/a/scripts/utility_functions.sh
-# check_script_dir
-
 # check if sudo
 if [[ "$EUID" -ne 0 ]]; then
   echo "This script must be run as root."
   exit 1
 fi
+
+source ./setup_disk.sh
+
+exit
 
 
 # setup git repo
@@ -29,7 +29,7 @@ nix-shell -p disko --run "disko nixos-config/disko.nix"
 
 # nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko nixos-config/disko.nix
   
-
+ 
 
 # mount
 
